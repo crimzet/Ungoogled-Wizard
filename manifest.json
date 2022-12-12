@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Ungoogled Wizard",
+    "description": "Google Web Store extension downloader tool for Ungoogled Chromium",
+    "version": "0.9",
+    "offline_enabled": false,
+    "action": {
+        "default_popup": "./popup/index.html",
+        "default_icon": "./images/icon48.png"
+    },
+    "icons": {
+        "48": "./images/icon48.png",
+        "32": "./images/icon32.png"
+    },
+    "host_permissions": [
+        "https://chrome.google.com/webstore/detail/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://chrome.google.com/webstore/detail/*"
+            ],
+            "js": ["./scripts/content.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
